@@ -19,6 +19,19 @@ class Matrix {
 
         return result;
     }
+
+    add() {
+        let result = [];
+        for(let i=0; i<this.a.length; i++) {
+            result[i] = [];
+            for(let j=0; j<this.b[0].length; j++) {
+                let sum = 0;
+                result[i][j] = this.a[i][j] + this.b[i][j];
+            }
+        }
+
+        return result;
+    }
 }
 
 let a = [
@@ -36,4 +49,6 @@ let b = [
 let m = new Matrix(a, b);
 
 console.log(m.multiply());
+
+console.log(m.add());
 
