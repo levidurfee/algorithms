@@ -11,6 +11,7 @@ typedef struct {
     Node (*create)(int data);
     int (*append)(Node *n, int data);
     int (*view_all)(Node *n);
+    int (*count)(Node *n);
 } Nodes;
 
 Node create(int data) {
@@ -38,5 +39,14 @@ int view_all(Node *n) {
         printf("%i\n", n->data);
     }
     return 0;
+}
+
+int count(Node *n) {
+    int i = 0;
+    while(n->next != NULL) {
+        i++;
+        n = n->next;
+    }
+    return i;
 }
 

@@ -8,6 +8,7 @@ int main() {
     ll.create = &create;
     ll.append = &append;
     ll.view_all = &view_all;
+    ll.count = &count;
 
     // call the construct with some data
     Node n = ll.create(4);
@@ -26,6 +27,11 @@ int main() {
 
     // show all the nodes
     ll.view_all(&n);
+
+    int size;
+    size = ll.count(&n);
+    printf("Size: %i\n", size);
+
     return 0;
 }
 
