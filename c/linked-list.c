@@ -19,6 +19,11 @@ int main() {
     // make sure it is working
     printf("%i\n", n.data);
 
+    // add a bunch of nodes
+    for(int i=0;i<100;i++) {
+        ll.append(&n, i);
+    }
+
     // show all the nodes
     ll.view_all(&n);
     return 0;
