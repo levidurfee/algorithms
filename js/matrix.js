@@ -1,17 +1,13 @@
 class Matrix {
-    constructor(a, b) {
-        this.a = a;
-        this.b = b;
-    }
 
-    multiply() {
+    static multiply(a, b) {
         let result = [];
-        for(let i=0; i<this.a.length; i++) {
+        for(let i=0; i<a.length; i++) {
             result[i] = [];
-            for(let j=0; j<this.b[0].length; j++) {
+            for(let j=0; j<b[0].length; j++) {
                 let sum = 0;
-                for(let k=0; k<this.a[0].length; k++) {
-                    sum += this.a[i][k] * this.b[k][j];
+                for(let k=0; k<a[0].length; k++) {
+                    sum += a[i][k] * b[k][j];
                 }
                 result[i][j] = sum;
             }
@@ -20,13 +16,12 @@ class Matrix {
         return result;
     }
 
-    add() {
+    static add(a, b) {
         let result = [];
-        for(let i=0; i<this.a.length; i++) {
+        for(let i=0; i<a.length; i++) {
             result[i] = [];
-            for(let j=0; j<this.b[0].length; j++) {
-                let sum = 0;
-                result[i][j] = this.a[i][j] + this.b[i][j];
+            for(let j=0; j<b[0].length; j++) {
+                result[i][j] = a[i][j] + b[i][j];
             }
         }
 
@@ -46,9 +41,7 @@ let b = [
     [6, 7, 8]
 ];
 
-let m = new Matrix(a, b);
+console.log(Matrix.multiply(a, b));
 
-console.log(m.multiply());
-
-console.log(m.add());
+console.log(Matrix.add(a, b));
 
