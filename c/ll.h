@@ -41,7 +41,7 @@ int view_all(Node *n) {
 }
 
 int count(Node *n) {
-    int i = 0;
+    int i = 1;
     while(n->next != NULL) {
         i++;
         n = n->next;
