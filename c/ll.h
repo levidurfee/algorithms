@@ -7,6 +7,7 @@ typedef struct node {
 } Node;
 
 typedef struct {
+    Node node;
     Node (*create)(int data);
     int (*append)(Node *n, int data);
     int (*view_all)(Node *n);
@@ -49,3 +50,14 @@ int count(Node *n) {
     return i;
 }
 
+Nodes new_ll(int data) {
+    Nodes ll;
+    ll.create = &create;
+    ll.append = &append;
+    ll.view_all = &view_all;
+    ll.count = &count;
+    Node n = ll.create(data);
+    ll.node = n;
+
+    return ll;
+}

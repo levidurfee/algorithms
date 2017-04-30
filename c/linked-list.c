@@ -3,33 +3,25 @@
 
 int main() {
     // instantiate Linked Lists class
-    Nodes ll;
-    // assign the methods
-    ll.create = &create;
-    ll.append = &append;
-    ll.view_all = &view_all;
-    ll.count = &count;
-
-    // call the construct with some data
-    Node n = ll.create(4);
+    Nodes ll = new_ll(4);
 
     // add another node with some data
-    ll.append(&n, 5);
-    ll.append(&n, 20);
+    ll.append(&ll.node, 5);
+    ll.append(&ll.node, 20);
 
     // make sure it is working
-    printf("%i\n", n.data);
+    printf("First: %i\n\n", ll.node.data);
 
     // add a bunch of nodes
-    for(int i=0;i<100;i++) {
-        //ll.append(&n, i);
+    for(int i=0;i<5;i++) {
+        ll.append(&ll.node, i);
     }
 
     // show all the nodes
-    ll.view_all(&n);
+    ll.view_all(&ll.node);
 
     int size;
-    size = ll.count(&n);
+    size = ll.count(&ll.node);
     printf("Size: %i\n", size);
 
     return 0;
