@@ -7,7 +7,6 @@ typedef struct node {
 } Node;
 
 typedef struct {
-    Node node;
     Node (*create)(int data);
     int (*append)(Node *n, int data);
     int (*view_all)(Node *n);
