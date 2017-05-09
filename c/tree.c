@@ -19,7 +19,7 @@ void insert(struct node *bst, int data) {
 int main() {
     struct node bst;
     bst = create(5);
-    insert(struct bst, 4);
+    insert(&bst, 4);
 
     return 0;
 }
