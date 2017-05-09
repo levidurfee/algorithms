@@ -1,20 +1,25 @@
 #include <stdio.h>
 
-struct bst_t {
+struct node {
     int data;
     struct bst_t *left;
     struct bst_t *right;
 };
 
-struct bst_t create(int data) {
-    struct bst_t bst;
+struct node create(int data) {
+    struct node bst;
     bst.data = data;
     return bst;
 }
 
+void insert(struct node *bst, int data) {
+
+}
+
 int main() {
-    struct bst_t bst;
+    struct node bst;
     bst = create(5);
+    insert(struct bst, 4);
 
     return 0;
 }
