@@ -13,7 +13,15 @@ struct node create(int data) {
 }
 
 void insert(struct node *bst, int data) {
-
+    struct node new;
+    new.data = data;
+    if(bst) {
+        if(bst->left) {
+           if(bst->left.data > data) {
+               printf("yes");
+           }
+        }
+    }
 }
 
 int main() {
