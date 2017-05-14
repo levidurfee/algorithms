@@ -16,17 +16,19 @@ let graph = [
     [0, 1, 2], /* wolverine's friends */
 ];
 
-let checkFriendship = (graph, i, j) => {
+let checkFriendship = (graph, names, i, j) => {
     if(graph[i].indexOf(j) > 0) {
+        console.log(names[i] + " and " + names[j] + " are friends!");
         return true;
     }
 
+    console.log(names[i] + " and " + names[j] + " are NOT friends.");
     return false;
 };
 
 // are Levi and Darth friends?
-console.log(checkFriendship(graph, 0, 3));
+checkFriendship(graph, names, 0, 3);
 
 // are Levi and Wolverine friends?! (You know it!)
-console.log(checkFriendship(graph, 0, 5));
+checkFriendship(graph, names, 0, 5);
 
